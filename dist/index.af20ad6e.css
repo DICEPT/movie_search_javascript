@@ -1,0 +1,90 @@
+html {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-white-50: #ffffff80;
+  --color-white-50: #ffffff4d;
+  --color-white-50: #fff3;
+  --color-white-50: #ffffff1a;
+}
+
+.dot-pulse {
+  --uib-size: 60px;
+  --uib-speed: 1.3s;
+  --uib-color: black;
+  width: var(--uib-size);
+  height: calc(var(--uib-size) * .27);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.dot-pulse.hide {
+  display: none;
+}
+
+.dot-pulse__dot, .dot-pulse:before, .dot-pulse:after {
+  content: "";
+  height: calc(var(--uib-size) * .18);
+  width: calc(var(--uib-size) * .18);
+  background-color: var(--uib-color);
+  border-radius: 50%;
+  display: block;
+  transform: scale(0);
+}
+
+.dot-pulse:before {
+  animation: pulse var(--uib-speed) ease-in-out infinite;
+}
+
+.dot-pulse__dot {
+  animation: pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * .125) infinite both;
+}
+
+.dot-pulse:after {
+  animation: pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * .25) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.movies {
+  font-size: 20px;
+}
+
+.movie-list {
+  background-color: var(--color-white-50);
+  padding: 20px;
+}
+
+.movie-list .movies {
+  background-color: #000;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+}
+
+.movies .movie {
+  --width: 200px;
+  width: var(--width);
+  height: calc(var(--width) * 3 / 2);
+  background-color: #000;
+  background-size: cover;
+}
+
+.view-more {
+  display: block;
+}
+
+.view-more.hide {
+  display: none;
+}
+
+/*# sourceMappingURL=index.af20ad6e.css.map */
